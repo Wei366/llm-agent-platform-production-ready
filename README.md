@@ -1,4 +1,5 @@
-# agent-platform-rag-multiagent-eval
+# llm-agent-platform-production-ready
+
 # 🚀 AI Agent Platform (RAG + Multi-Agent + Eval)
 
 A production-oriented LLM Agent system with multi-agent collaboration, RAG pipeline, and evaluation harness.
