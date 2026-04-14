@@ -1,16 +1,118 @@
-# my-first-ai-project
-基于 Dify 的垂直领域 RAG 智能问答系统开发
+# agent-platform-rag-multiagent-eval
+# 🚀 AI Agent Platform (RAG + Multi-Agent + Eval)
 
-##项目介绍
-针对 [通信/法律/出海] 领域长文档检索效率低、大模型回答易幻觉的问题，搭建了垂直领域知识库。
+A production-oriented LLM Agent system with multi-agent collaboration, RAG pipeline, and evaluation harness.
 
-##核心职责
+---
 
-使用 Dify 构建 RAG 工作流，通过 混合检索 (Vector + Keyword) 和 Rerank 机制，将检索召回率提升了 [30%+]。
+## ✨ Features
 
-负责海量英文技术文档的清洗与精细化分段（Chunking Strategy），优化了 Top-k 召回片段的相关性。
+* 🤖 Multi-Agent System (Planner / Executor / Critic)
+* 📚 RAG Pipeline (Hybrid Retrieval + Rerank)
+* 🛠️ Tool Calling (Dynamic Tool Registry)
+* 🧠 Memory Management (Short-term + Long-term)
+* 📊 Evaluation System (Accuracy / Cost / Latency)
+* ⚡ FastAPI-based async service
 
-利用 Python 编写自动化脚本，对原始 PDF 数据进行预处理，提升了知识库录入效率。
+---
 
-成果： 成功实现对 500+ 份行业文档的秒级检索，回答准确率达到 [90%+]。
+## 🏗️ Architecture
+
+```text
+User → API → Agent Core → (Tools | RAG | Memory)
+```
+
+---
+
+## 🧠 Multi-Agent Design
+
+* **Planner**: Breaks down complex tasks into steps
+* **Executor**: Executes each step (tool / RAG)
+* **Critic**: Evaluates results and triggers retry
+
+Supports:
+
+* self-reflection loop
+* retry mechanism
+* failure recovery
+
+---
+
+## 🔍 RAG Pipeline
+
+```text
+query → rewrite → hybrid retrieval → rerank → generation
+```
+
+* Hybrid retrieval (BM25 + embedding)
+* Cross-encoder reranking
+* Top-k filtering to reduce noise
+
+---
+
+## 🛠️ Tool System
+
+* Dynamic tool registration (JSON schema)
+* Supports:
+
+  * search
+  * calculator
+  * database query
+
+---
+
+## 📊 Evaluation System
+
+* Golden dataset-based evaluation
+
+* Metrics:
+
+  * correctness
+  * hallucination rate
+  * latency
+  * token cost
+
+* LLM-as-judge for answer evaluation
+
+* Regression testing for prompt / system changes
+
+---
+
+## ⚙️ Tech Stack
+
+* Python / FastAPI
+* LangGraph (or custom agent loop)
+* Qdrant / Milvus (vector DB)
+* Elasticsearch (optional hybrid search)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/Wei366/agent-platform
+cd agent-platform
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+---
+
+## 📌 Future Work
+
+* GraphRAG integration
+* MCP protocol support
+* advanced memory compression
+* cost optimization (routing / caching)
+
+---
+
+## 🧠 Key Insights
+
+* Multi-agent improves stability for complex tasks
+* RAG quality depends more on ranking than retrieval
+* Evaluation is critical for iterative improvement
+
+---
+
 
