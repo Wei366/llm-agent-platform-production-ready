@@ -116,4 +116,40 @@ uvicorn main:app --reload
 
 ---
 
+agent-platform/
+│
+├── api/                  # FastAPI入口
+│   └── main.py
+│
+├── agents/               # Agent核心逻辑
+│   ├── planner.py
+│   ├── executor.py
+│   ├── critic.py
+│   └── agent_loop.py
+│
+├── rag/                  # RAG pipeline
+│   ├── retriever.py
+│   ├── reranker.py
+│   └── pipeline.py
+│
+├── tools/                # 工具系统
+│   ├── registry.py
+│   ├── search.py
+│   └── calculator.py
+│
+├── memory/               # memory系统
+│   └── memory_manager.py
+│
+├── eval/                 # 评测系统（🔥加分）
+│   ├── evaluator.py
+│   ├── dataset.json
+│   └── runner.py
+│
+├── configs/
+│
+├── tests/                # 测试（加分）
+│
+├── requirements.txt
+└── README.md
+
 
