@@ -90,7 +90,7 @@ query → rewrite → hybrid retrieval → rerank → generation
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/Wei366/agent-platform
+git clone https://github.com/Wei366/my-first-ai-project.git
 cd agent-platform
 pip install -r requirements.txt
 uvicorn main:app --reload
